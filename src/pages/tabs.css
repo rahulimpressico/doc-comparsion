@@ -1,0 +1,33 @@
+/* styles.css */
+.diff {
+    font-family: Courier;
+    /* border: medium; */
+    /* width: "10px"; */
+    
+}
+
+.diff_header {
+    /* background-color: #e0e0e0; */
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: #002D62;
+}
+
+a {
+    color: white;
+}
+  
+
+.diff_add {
+    background-color: #aaffaa;
+}
+
+.diff_chg {
+    background-color: #ffff77;
+}
+
+.diff_sub {
+    background-color: #ffaaaa;
+}
