@@ -16,7 +16,15 @@ export const Tab3 = ({ heading, value }) => {
       if (value == "standard") {
         url = `${apiUrl}/doc/compare?doc_id1=1&doc_id2=2&text_type=standard`;
 
-        const response = await axios.get(url);
+        const response = await axios.get(url, {
+          headers: {
+            "Cache-Control": "no-cache",
+            "Access-Control-Allow-Origin": "*",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            Connection: "keep-alive",
+          },
+        });
         setCompareDoc(response.data);
       }
     } catch (error) {

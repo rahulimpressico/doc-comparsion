@@ -35,7 +35,15 @@ export const Tab2 = () => {
 
   const fielSuggestion = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/docs?user_id=1`);
+      const response = await axios.get(`${apiUrl}/docs?user_id=1`, {
+        headers: {
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          Connection: "keep-alive",
+        },
+      });
       setfileViewData(response.data);
     } catch (error) {
       console.error(error);
@@ -43,7 +51,15 @@ export const Tab2 = () => {
   };
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/docs`);
+      const response = await axios.get(`${apiUrl}/docs`, {
+        headers: {
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          Connection: "keep-alive",
+        },
+      });
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -54,7 +70,16 @@ export const Tab2 = () => {
     if (file1 && file2) {
       try {
         const response = await axios.get(
-          `${apiUrl}/doc/compare?doc_id1=${file1}&doc_id2=${file2}&text_type=summary`
+          `${apiUrl}/doc/compare?doc_id1=${file1}&doc_id2=${file2}&text_type=summary`,
+          {
+            headers: {
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              Accept: "*/*",
+              "Accept-Encoding": "gzip, deflate",
+              Connection: "keep-alive",
+            },
+          }
         );
 
         setCompareDoc(response.data);

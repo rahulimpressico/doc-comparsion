@@ -30,6 +30,7 @@ export const Tab1 = () => {
           {
             headers: {
               "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
               Accept: "*/*",
               "Accept-Encoding": "gzip, deflate",
               Connection: "keep-alive",
@@ -51,6 +52,7 @@ export const Tab1 = () => {
       const response = await axios.get(`${apiUrl}/docs?user_id=1`, {
         headers: {
           "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
           "Accept-Encoding": "gzip, deflate",
           Connection: "keep-alive",
